@@ -62,7 +62,7 @@ if [ "${INPUT_SNAPSHOT}" = "true" ]; then
   docker push ${DOCKERNAME}
   docker push ${SHA_DOCKER_NAME}
 else
-  docker build $BUILDPARAMS -t ${DOCKERNAME} .
+  docker build --ssh $BUILDPARAMS -t ${DOCKERNAME} .
   docker push ${DOCKERNAME}
 fi
 
